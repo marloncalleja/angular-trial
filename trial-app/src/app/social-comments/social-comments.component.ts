@@ -9,6 +9,7 @@ import { Comment } from '../models/comment';
 })
 export class SocialCommentsComponent implements OnInit {
   comments: Comment[] = [];
+  description: string;
 
   constructor(private socialService: SocialService) {}
 
@@ -18,5 +19,9 @@ export class SocialCommentsComponent implements OnInit {
     });
 
     this.socialService.loadComments();
+  }
+
+  onSubmit(data: Comment) {
+    this.socialService.addComment(data);
   }
 }

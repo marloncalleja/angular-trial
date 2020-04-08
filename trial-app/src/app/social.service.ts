@@ -32,4 +32,8 @@ export class SocialService {
     this.dataStore.comments = this.ELEMENT_DATA_COMMENT;
     this._comments.next(Object.assign({}, this.dataStore).comments);
   }
+
+  addComment(comment: Comment) {
+    this.ELEMENT_DATA_COMMENT.push(comment);
+  }
 }
