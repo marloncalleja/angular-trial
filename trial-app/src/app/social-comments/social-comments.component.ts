@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { commentTypes } from '../constants';
 import { CommentType } from '../models/comment-type';
 import { CommentComponent } from './comment.component';
 import { EventComponent } from './event.component';
+
+export const commentTypes: Array<CommentType> = [
+  { value: 'text', label: 'Text' },
+  { value: 'event', label: 'Event' },
+];
 
 @Component({
   selector: 'app-social-comments',
