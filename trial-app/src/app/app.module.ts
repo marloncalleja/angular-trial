@@ -5,12 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SocialService } from './social.service';
-import {
-  SocialCommentsComponent,
-  CommentComponent,
-  EventComponent,
-} from './social-comments/social-comments.component';
+import { SocialCommentsComponent } from './social-comments/social-comments.component';
 import { FormsModule } from '@angular/forms';
+import { CommentComponent } from './social-comments/comment.component';
+import { EventComponent } from './social-comments/event.component';
 
 @NgModule({
   declarations: [
