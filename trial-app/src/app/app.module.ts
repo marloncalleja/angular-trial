@@ -5,11 +5,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SocialService } from './social.service';
-import { SocialCommentsComponent } from './social-comments/social-comments.component';
+import {
+  SocialCommentsComponent,
+  CommentComponent,
+  EventComponent,
+} from './social-comments/social-comments.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, SocialCommentsComponent],
+  declarations: [
+    AppComponent,
+    SocialCommentsComponent,
+    CommentComponent,
+    EventComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [SocialService],
   bootstrap: [AppComponent],

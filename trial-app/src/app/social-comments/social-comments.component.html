@@ -2,27 +2,6 @@
 
 <p>Lorem ipsum dolor</p>
 
-<form
-  #commentForm="ngForm"
-  (ngSubmit)="onSubmit(commentForm.value)"
-  ngNativeValidate
->
-  <div class="form-group">
-    <label for="description">Description</label>
-    <input
-      type="text"
-      id="description"
-      name="description"
-      [(ngModel)]="description"
-      required
-    />
-  </div>
+<app-comment></app-comment>
 
-  <button type="submit">Post</button>
-</form>
-
-<ul>
-  <li *ngFor="let comment of comments">
-    {{ comment.description }}
-  </li>
-</ul>
+<app-event></app-event>
