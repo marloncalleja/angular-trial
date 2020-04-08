@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SocialService } from '../social.service';
 import { Comment } from '../models/comment';
 import { Event } from '../models/event';
+import { commentTypes } from '../constants';
+import { CommentType } from '../models/comment-type';
 
 @Component({
   selector: 'app-comment',
@@ -35,7 +37,7 @@ export class CommentComponent implements OnInit {
   comments: Comment[] = [];
   description: string;
 
-  constructor(private socialService: SocialService) {}
+  constructor(public socialService: SocialService) {}
 
   ngOnInit() {
     this.socialService.comments.subscribe((data) => {
@@ -94,7 +96,7 @@ export class CommentComponent implements OnInit {
       <button type="submit">Post</button>
     </form>
     <ul>
-      <li *ngFor="let event of events">
+      <li *ngFor="let event of comments">
         <span>{{ event.description }}</span>
         <p>Start: {{ event.startDate }} End: {{ event.endDate }}</p>
       </li>
@@ -102,16 +104,16 @@ export class CommentComponent implements OnInit {
   `,
 })
 export class EventComponent implements OnInit {
-  events: Event[] = [];
+  comments: Event[] = [];
   description: string;
   startDate: string;
   endDate: string;
 
-  constructor(private socialService: SocialService) {}
+  constructor(public socialService: SocialService) {}
 
   ngOnInit() {
     this.socialService.events.subscribe((data) => {
-      this.events = data;
+      this.comments = data;
     });
 
     this.socialService.loadEvents();
@@ -128,7 +130,23 @@ export class EventComponent implements OnInit {
   styleUrls: ['./social-comments.component.css'],
 })
 export class SocialCommentsComponent implements OnInit {
-  type: string = 'comment';
+  commentTypes: CommentType[];
+  selectedCommentType = CommentComponent;
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.commentTypes = Object.values(commentTypes);
+  }
+
+  changeComponent(type) {
+    switch (type) {
+      case 'text':
+        this.selectedCommentType = CommentComponent;
+        break;
+      case 'event':
+        this.selectedCommentType = EventComponent;
+        break;
+      default:
+        this.selectedCommentType = CommentComponent;
+    }
+  }
 }

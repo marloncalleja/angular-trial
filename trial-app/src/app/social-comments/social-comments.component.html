@@ -1,7 +1,10 @@
 <h2>Social Comments</h2>
 
 <p>Lorem ipsum dolor</p>
+<div style="margin-bottom: 10px;">
+  <span *ngFor="let type of commentTypes">
+    <button (click)="changeComponent(type.value)">{{ type.label }}</button>
+  </span>
+</div>
 
-<app-comment></app-comment>
-
-<app-event></app-event>
+<ng-container *ngComponentOutlet="selectedCommentType"></ng-container>

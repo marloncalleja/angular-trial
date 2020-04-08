@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     EventComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  entryComponents: [CommentComponent, EventComponent],
   providers: [SocialService],
   bootstrap: [AppComponent],
 })
