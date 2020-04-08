@@ -7,31 +7,7 @@ import { CommentType } from '../models/comment-type';
 
 @Component({
   selector: 'app-comment',
-  template: `
-    <form
-      #commentForm="ngForm"
-      (ngSubmit)="onSubmit(commentForm.value)"
-      ngNativeValidate
-    >
-      <div class="form-group">
-        <label for="description">Description</label>
-        <input
-          type="text"
-          id="description"
-          name="description"
-          [(ngModel)]="description"
-          required
-        />
-      </div>
-
-      <button type="submit">Post</button>
-    </form>
-    <ul>
-      <li *ngFor="let comment of comments">
-        {{ comment.description }}
-      </li>
-    </ul>
-  `,
+  templateUrl: './comment.html',
 })
 export class CommentComponent implements OnInit {
   comments: Comment[] = [];
@@ -54,54 +30,7 @@ export class CommentComponent implements OnInit {
 
 @Component({
   selector: 'app-event',
-  template: `
-    <form
-      #commentForm="ngForm"
-      (ngSubmit)="onSubmit(commentForm.value)"
-      ngNativeValidate
-    >
-      <div class="form-group">
-        <label for="description">Description</label>
-        <input
-          type="text"
-          id="description"
-          name="description"
-          [(ngModel)]="description"
-          required
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="startDate">Start Date</label>
-        <input
-          type="text"
-          id="startDate"
-          name="startDate"
-          [(ngModel)]="startDate"
-          required
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="endDate">End Date</label>
-        <input
-          type="text"
-          id="endDate"
-          name="endDate"
-          [(ngModel)]="endDate"
-          required
-        />
-      </div>
-
-      <button type="submit">Post</button>
-    </form>
-    <ul>
-      <li *ngFor="let event of comments">
-        <span>{{ event.description }}</span>
-        <p>Start: {{ event.startDate }} End: {{ event.endDate }}</p>
-      </li>
-    </ul>
-  `,
+  templateUrl: './event.html',
 })
 export class EventComponent implements OnInit {
   comments: Event[] = [];
