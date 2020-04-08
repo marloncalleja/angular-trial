@@ -9,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class SocialService {
   private ELEMENT_DATA_COMMENT: Comment[] = [
     { description: 'This is a comment' },
-    { description: 'My name is Tom' },
-    { description: 'My name is Jerry' },
+    { description: 'My name is Marlon' },
+    { description: 'My surname is Calleja' },
   ];
 
   private _comments: BehaviorSubject<Comment[]>;
