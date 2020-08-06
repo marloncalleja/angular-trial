@@ -13,18 +13,23 @@ import { RainbowDirective } from './test-components/rainbow/rainbow.directive';
 import { LifecycleComponent } from './test-components/lifecycle/lifecycle.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { PwaOneComponent } from './pwa/pwa-one.component';
+import { PwaTwoComponent } from './pwa/pwa-two.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SocialCommentsComponent,
     CommentComponent,
-    EventComponent,   
-    RainbowDirective, LifecycleComponent,
+    EventComponent,
+    RainbowDirective,
+    LifecycleComponent,
+    PwaOneComponent,
+    PwaTwoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   entryComponents: [CommentComponent, EventComponent],
   providers: [SocialService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
