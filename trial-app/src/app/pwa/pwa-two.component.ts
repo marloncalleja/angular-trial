@@ -17,8 +17,8 @@ export class PwaTwoComponent implements OnInit {
     var myDynamicManifest = {
       "name": "pwa-two",
       "short_name": "pwa-two",
-      "theme_color": "#000000",
-      "background_color": "#ffffff",
+      "theme_color": "#551487",
+      "background_color": "#000000",
       "display": "standalone",
       "scope": "./",
       "start_url": "./",
