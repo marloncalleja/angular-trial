@@ -16,6 +16,7 @@ import { environment } from '../environments/environment';
 import { PwaOneComponent } from './pwa/pwa-one.component';
 import { PwaTwoComponent } from './pwa/pwa-two.component';
 import { PwaThreeComponent } from './pwa/pwa-three.component';
+import { PageNotFoundComponent } from './page-not-found-component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PwaThreeComponent } from './pwa/pwa-three.component';
     PwaOneComponent,
     PwaTwoComponent,
     PwaThreeComponent,
+    PageNotFoundComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   entryComponents: [CommentComponent, EventComponent],
