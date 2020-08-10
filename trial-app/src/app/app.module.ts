@@ -15,6 +15,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { PwaOneComponent } from './pwa/pwa-one.component';
 import { PwaTwoComponent } from './pwa/pwa-two.component';
+import { PwaThreeComponent } from './pwa/pwa-three.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { PwaTwoComponent } from './pwa/pwa-two.component';
     LifecycleComponent,
     PwaOneComponent,
     PwaTwoComponent,
+    PwaThreeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   entryComponents: [CommentComponent, EventComponent],
